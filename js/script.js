@@ -50,10 +50,13 @@ function iniciar(event){
 function startRec() { // Función que inicia o para el reconocimiento de voz //
   if (estadoRV == 0) {
     rec.start();
+    texto.placeholder = "Te escucho...";
     boton.innerHTML = "Escuchando...";
     estadoRV = 1;
   } else if (estadoRV == 1) {
     rec.stop();
+    texto.value = "";
+    texto.placeholder = "Lo que digas aparecerá aquí";
     boton.innerHTML = "Escuchar";
     estadoRV = 0;
   }

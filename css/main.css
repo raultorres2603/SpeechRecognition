@@ -1,9 +1,18 @@
 #texto {
-  width:  500px;
-  height: 25px;
+  width:  50%;
+  height: 100px;
 }
 
 #botonEmpezar {
-  width:  500px;
-  height: 30px;
+  width:  50%;
+  height: 100px;
+}
+
+#contenedor {
+  margin-top: 20%;
+}
+
+* {
+  font-family: cursive;
+  font-size: 50px;
 }

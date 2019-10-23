@@ -7,9 +7,11 @@
   </head>
   <body>
     <center>
+      <div id="contenedor">
       <input id="texto" type="text" placeholder="Lo que digas aparecerá aquí">
       <br>
       <button id="botonEmpezar" onclick="startRec()"> Escuchar </button>
+      </div>
     </center>
 
     <script src="./js/script.js"></script>
