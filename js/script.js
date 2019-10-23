@@ -29,7 +29,7 @@ function iniciar(event){
 	for (let i = event.resultIndex; i < event.results.length; i++){
       var escuchado = event.results[i][0].transcript; // Variable que coje el valor del reconociemiento una vez pasados unos 2 segundos //
       texto.value = escuchado; // Asignar al input la variable escuchado //
-      
+
          if (contador == 0) { // If dependiendo de la variable contador //
            n1 = escuchado;
            contador++;
