@@ -1,19 +1,41 @@
 // VARIABLE DE RECONOCIMIENTO DE VOZ //
+/**
+*@author Raul Torres
+*@typedef {object} SpeechRecognition
+*/
 let rec;
 
 // OBJETOS DEL DOCUMENTO //
+/**
+*@typedef {object}
+*/
 var texto = document.getElementById('texto');
 var boton = document.getElementById('botonEmpezar');
 
 // ESTADO DEL RECONOCIMIENTO DE VOZ //
+/**
+*@type {number}
+*/
 var estadoRV = 0;
 
 // CONTADOR PARA METER EN VARIABLES //
+/**
+*@typedef {number}
+*/
 var contador = 0;
 
 // VARIABLES PARA UTILIZACIÓN //
+/**
+*@typedef {object}
+*/
 var n1 = 0;
+/**
+*@typedef {object}
+*/
 var n2 = 0;
+/**
+*@typedef {object}
+*/
 var n3 = 0;
 
     if (!("webkitSpeechRecognition" in window)) { // Si no se puede utilizar la API webkitSpeechRecognition que muestre alerta else if crea el objeto //
@@ -25,8 +47,14 @@ var n3 = 0;
     	rec.interim = true;
     	rec.addEventListener("result",iniciar); // Añadir evento //
     }
+    /**
+    *@description Inicia el proceso de reconocimiento de voz. Posteriormente lo guardará en variables.
+    */
 function iniciar(event){
 	for (let i = event.resultIndex; i < event.results.length; i++){
+    /**
+    *@typedef {object}
+    */
       var escuchado = event.results[i][0].transcript; // Variable que coje el valor del reconociemiento una vez pasados unos 2 segundos //
       texto.value = escuchado; // Asignar al input la variable escuchado //
 
@@ -47,6 +75,9 @@ function iniciar(event){
 	}
 }
 
+/**
+*@description Llama al método start() para iniciar el reconocimiento
+*/
 function startRec() { // Función que inicia o para el reconocimiento de voz //
   if (estadoRV == 0) {
     rec.start();
