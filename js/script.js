@@ -38,13 +38,18 @@ function iniciar(event){
             contador++;
          } else if (contador == 2) {
             n3 = escuchado;
+            decir("¡Muestra registrada!");
             alert(n1 + " " + n2 + " " + n3);
-            contador = 0;
-            n1 = 0;
-            n2 = 0;
-            n3 = 0;
+            reiniciar();
          }
 	}
+}
+
+function reiniciar() {
+  contador = 0;
+  n1 = 0;
+  n2 = 0;
+  n3 = 0;
 }
 
 function startRec() { // Función que inicia o para el reconocimiento de voz //
@@ -58,6 +63,12 @@ function startRec() { // Función que inicia o para el reconocimiento de voz //
     texto.value = "";
     texto.placeholder = "Lo que digas aparecerá aquí";
     boton.innerHTML = "Escuchar";
+    reiniciar();
     estadoRV = 0;
   }
+}
+
+function decir(texto){
+    var voz = texto;
+    speechSynthesis.speak(new SpeechSynthesisUtterance(voz));
 }
