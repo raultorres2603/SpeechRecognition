@@ -38,7 +38,7 @@ function iniciar(event){
             contador++;
          } else if (contador == 2) {
             n3 = escuchado;
-            decir("¡Muestra registrada!");
+            decir("Registrado");
             alert(n1 + " " + n2 + " " + n3);
             reiniciar();
          }
